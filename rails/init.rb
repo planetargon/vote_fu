@@ -10,9 +10,9 @@ RAILS_DEFAULT_LOGGER.info "** vote_fu: setting up load paths"
   end
 
   if ActiveSupport::Dependencies.respond_to?(:autoload_once_paths)
-    ActiveSupport::Dependencies.load_once_paths.delete(path)
-  else
     ActiveSupport::Dependencies.autoload_once_paths.delete(path)
+  else
+    ActiveSupport::Dependencies.load_once_paths.delete(path)
   end
 end
 
